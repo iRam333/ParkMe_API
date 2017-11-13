@@ -30,6 +30,7 @@ build/Release
 # Dependency directories
 node_modules
 jspm_packages
+sql_database
 
 # Optional npm cache directory
 .npm
@@ -45,4 +46,3 @@ jspm_packages
 
 # Yarn Integrity file
 .yarn-integrity
-

@@ -29,18 +29,27 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(function (req, res, next) {
-  if (req.headers && req.headers.authorization) {
-    jwt.verify(req.headers.authorization, process.env.EJWT, function (err, decode) {
-      if (err) {
-        req.user = undefined;
-      }
-      req.user = decode;
-      next();
-    });
+  if (req._parsedUrl.pathname == '/user/login' || req._parsedUrl.pathname == '/user/signUp'){
+    next();
   }
   else {
-    req.user = undefined;
-    next();
+    if (req.headers && req.headers.authorization) {
+      var token = req.headers.authorization.split(" ");
+      jwt.verify(token[1], process.env.EJWT, function (err, decode) {
+        if (err) {
+          res.json({"errors":{"code":401, "message":"Invalid token."}});
+          req.user = undefined;
+        }
+        else {
+          req.user = decode;
+          next();
+        }
+      });
+    }
+    else {
+      req.user = undefined;
+      res.json({"errors":{"code":401, "message":"No authorization token was found."}});
+    }
   }
 });
 
