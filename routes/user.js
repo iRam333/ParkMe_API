@@ -135,7 +135,6 @@ router.post('/login', function (req, res, next) {
     if (err) {
       res.json(err);
     }
-    console.log(rows);
     var userFound = rows[0];
     if (!userFound) {
       return res.status(404).send('El usuario no existe');
