@@ -1,154 +1,308 @@
 var express = require('express');
 var router = express.Router();
-var _ = require('lodash');
-var jwt = require('jsonwebtoken');
 var ejwt = require('express-jwt');
 var bcrypt = require('bcrypt');
 var user = require('../models/user');
 
+// Check JWT
 var jwtCheck = ejwt({
   secret: process.env.EJWT
 });
 
-function createToken(user) {
-  return "Bearer " + jwt.sign(_.omit(user, 'password'), process.env.EJWT, {
-    expiresIn: 60*60*5
-  });
-}
-
-/*GET*/
+// Check if username is available
 router.get('/checkUsername/:username?', jwtCheck, function (req, res, next) {
   if (!req.params.username) {
-    return res.json({"error":{"code":400, "message":"Username is missing."}});
+    return res.json({
+      "error":{
+        "code":400,
+        "message":"Username is missing."
+      }
+    });
   }
-  user.getUsername(req.params.username, function (err, rows) {
+  user.checkUserByUsername(req.params.username, function (err, rows) {
     if (err) {
-      res.json(err);
+      return res.json(err);
     }
     var usernameFound = rows[0].FOUND
     if (!usernameFound) {
-        res.json({"error":{"code":210, "message":"The username is available."}});
-    }
-    else {
-      res.json({"success":{"code":211, "message":"The username is already in use."}});
-    }
-  });
-});
-
-router.get('/checkEmail/:email?', jwtCheck, function (req, res, next) {
-  if (!req.params.email) {
-    return res.json({"error":{"code":400, "message":"Email is missing."}});
-  }
-  user.getEmail(req.params.email, function (err, rows) {
-    if (err) {
-      res.json(err);
-    }
-    var emailFound = rows[0].FOUND
-    if (!emailFound) {
-        res.json({"error":{"code":210, "message":"The email is available."}});
-    }
-    else {
-      res.json({"success":{"code":211, "message":"The email is already in use."}});
-    }
-  });
-});
-
-router.get('/verifyByUsername/:username?', jwtCheck, function (req, res, next) {
-  if (!req.params.username) {
-    return res.json({"error":{"code":400, "message":"Username is missing."}});
-  }
-  user.getUserByUsername(req.params.username, function (err, rows) {
-    if (err) {
-      res.json({"error":{"code":404, "message":"User not found."}});
-    }
-    var userFound = rows[0];
-    res.json(userFound);
-  });
-});
-
-router.get('/verifyByEmail/:email?', jwtCheck, function (req, res, next) {
-  if (!req.params.email) {
-    return res.json({"error":{"code":400, "message":"Email is missing."}});
-  }
-  user.getUserByEmail(req.params.email, function (err, rows) {
-    if (err) {
-      res.json({"error":{"code":404, "message":"User not found."}});
-    }
-    var userFound = rows[0];
-    res.json(userFound);
-  });
-});
-
-/*POST*/
-router.post('/signUp', function (req, res, next) {
-  if (!req.body.email) {
-    return res.json({"error":{"code":400, "message":"Email is missing."}});
-  }
-  if (!req.body.username) {
-    return res.json({"error":{"code":400, "message":"Username is missing."}});
-  }
-  if (!req.body.password) {
-    return res.json({"error":{"code":400, "message":"Password is missing."}});
-  }
-  user.getEmail(req.body.email, function (err, rows1) {
-    if (err) {
-      res.json(err);
-    }
-    var newUser = rows1[0].FOUND;
-    if (!newUser) {
-      user.getUsername(req.body.username, function (err, rows2) {
-        if (err) {
-          res.json(err);
-        }
-        newUser = rows2[0].FOUND;
-        if (!newUser) {
-          newUser = req.body;
-          bcrypt.hash(newUser.password, 11, function (err, hash) {
-            if (err) {
-              res.json(err);
-            }
-            newUser.password = hash;
-            user.addUser(newUser, function (err, result) {
-              if (err) {
-                res.json(err);
-              }
-              return res.json({"success":{"code":201, "message":"User created successfully."}});
-            });
-          });
-        }
-        else {
-          res.json({"error":{"code":400, "message":"Username is in use."}});
+      return res.json({
+        "error":{
+          "code":210,
+          "message":"The username is available."
         }
       });
     }
-    else {
-      res.json({"error":{"code":400, "message":"Email is in use."}});
-    }
+    return res.json({
+      "success":{
+        "code":211,
+        "message":"The username is already in use."
+      }
+    });
   });
 });
 
-router.post('/login', function (req, res, next) {
-  if (!req.body.username || !req.body.password) {
-    return res.status(400).send('Debe ingresar el usuario y la contraseña');
+// Check if email is available
+router.get('/checkEmail/:email?', jwtCheck, function (req, res, next) {
+  if (!req.params.email) {
+    return res.json({
+      "error":{
+        "code":400,
+        "message":"Email is missing."
+      }
+    });
   }
-  user.getUser(req.body.username, function (err, rows) {
+  user.checkUserByEmail(req.params.email, function (err, rows) {
     if (err) {
-      res.json(err);
+      return res.json(err);
     }
-    var userFound = rows[0];
-    if (!userFound) {
-      return res.status(404).send('El usuario no existe');
+    var emailFound = rows[0].FOUND
+    if (!emailFound) {
+      return res.json({
+        "error":{
+          "code":210,
+          "message":"The email is available."
+        }
+      });
     }
-    bcrypt.compare(req.body.password, userFound.PSS_PASSWORD, function(err, result) {
-      if (err) {
-        res.json(err);
+    return res.json({
+      "success":{
+        "code":211,
+        "message":"The email is already in use."
+      }
+    });
+  });
+});
+
+// Update user information
+router.put('/information/:id?', jwtCheck, function (req, res, next) {
+  if (!req.body.password) {
+    return res.json({
+      "error":{
+        "code":400,
+        "message":"Password is missing."
+      }
+    });
+  }
+  if (!req.body.firstname) {
+    return res.json({
+      "error":{
+        "code":400,
+        "message":"Firstname is missing."
+      }
+    });
+  }
+  if (!req.body.lastname) {
+    return res.json({
+      "error":{
+        "code":400,
+        "message":"Last name is missing."
+      }
+    });
+  }
+  if (!req.body.birthdate) {
+    return res.json({
+      "error":{
+        "code":400,
+        "message":"Birthdate is missing."
+      }
+    });
+  }
+  if (!req.body.licenseplate) {
+    return res.json({
+      "error":{
+        "code":400,
+        "message":"License plate is missing."
+      }
+    });
+  }
+  user.getUserPasswordById(req.params.id, function (err1, rows1) {
+    if (err1) {
+      return res.json(err);
+    }
+    bcrypt.compare(req.body.password, rows1[0].PSS_PASSWORD, function(err2, rows2) {
+      if (err2) {
+        return res.json(err2);
+      }
+      if (!rows2) {
+        return res.json({
+          "error":{
+            "code":401,
+            "message":"Invalid password."
+          }
+        });
+      }
+      user.updateUserInfo(req.params.id, req.body, function (err3, rows3) {
+        if (err3) {
+          return res.json(err3);
+        }
+        return res.json({
+          "success":{
+            "code":201,
+            "message":"User updated successfully."
+          }
+        });
+      });
+    });
+  });
+});
+
+// Update user email
+router.put('/email/:id?', jwtCheck, function (req, res, next) {
+  if (!req.body.email) {
+    return res.json({
+      "error":{
+        "code":400,
+        "message":"Email is missing."
+      }
+    });
+  }
+  if (!req.body.password) {
+    return res.json({
+      "error":{
+        "code":400,
+        "message":"Password is missing."
+      }
+    });
+  }
+  user.getUserPasswordById(req.params.id, function (err1, rows1) {
+    if (err1) {
+      return res.json(err);
+    }
+    bcrypt.compare(req.body.password, rows1[0].PSS_PASSWORD, function(err2, rows2) {
+      if (err2) {
+        return res.json(err2);
+      }
+      if (!rows2) {
+        return res.json({
+          "error":{
+            "code":401,
+            "message":"Invalid password."
+          }
+        });
+      }
+      user.updateUserEmail(req.params.id, req.body, function (err3, rows3) {
+        if (err3) {
+          return res.json(err3);
+        }
+        return res.json({
+          "success":{
+            "code":201,
+            "message":"Email updated successfully."
+          }
+        });
+      });
+    });
+  });
+});
+
+// Update user username
+router.put('/username/:id?', jwtCheck, function (req, res, next) {
+  if (!req.body.email) {
+    return res.json({
+      "error":{
+        "code":400,
+        "message":"Email is missing."
+      }
+    });
+  }
+  if (!req.body.password) {
+    return res.json({
+      "error":{
+        "code":400,
+        "message":"Password is missing."
+      }
+    });
+  }
+  user.getUserPasswordById(req.params.id, function (err1, rows1) {
+    if (err1) {
+      return res.json(err);
+    }
+    bcrypt.compare(req.body.password, rows1[0].PSS_PASSWORD, function(err2, rows2) {
+      if (err2) {
+        return res.json(err2);
+      }
+      if (!rows2) {
+        return res.json({
+          "error":{
+            "code":401,
+            "message":"Invalid password."
+          }
+        });
+      }
+      user.updateUserUsername(req.params.id, req.body, function (err3, rows3) {
+        if (err3) {
+          return res.json(err3);
+        }
+        return res.json({
+          "success":{
+            "code":201,
+            "message":"Username updated successfully."
+          }
+        });
+      });
+    });
+  });
+});
+
+// Update user password
+router.put('/password/:id?', jwtCheck, function (req, res, next) {
+  if (!req.body.oldpassword1 || !req.body.oldpassword2) {
+    return res.json({
+      "error":{
+        "code":400,
+        "message":"Password is missing."
+      }
+    });
+  }
+  if (req.body.oldpassword1 != req.body.oldpassword2) {
+    return res.json({
+      "error":{
+        "code":212,
+        "message":"Passwords do not match."
+      }
+    });
+  }
+  if (req.body.newpassword.length < 8) {
+    return res.json({
+      "error":{
+        "code":213,
+        "message":"Password length must be 8 or greater."
+      }
+    });
+  }
+  user.getUserPasswordById(req.params.id, function (err1, rows1) {
+    if (err1) {
+      return res.json(err);
+    }
+    bcrypt.compare(req.body.oldpassword1, rows1[0].PSS_PASSWORD, function(err2, result) {
+      if (err2) {
+        return res.json(err2);
       }
       if (!result) {
-        return res.status(401).send("Usuario o contraseña incorrectos");
+        return res.json({
+          "error":{
+            "code":401,
+            "message":"Invalid password."
+          }
+        });
       }
-      else {
-        res.status(201).send({"success":{"token": createToken(userFound)}});
-      }
+      bcrypt.hash(req.body.newpassword, 11, function (err3, hash) {
+        if (err3) {
+          return res.json(err3);
+        }
+        req.body.newpassword = hash;
+        user.updateUserPassword(req.params.id, req.body, function (err4, rows2) {
+          if (err4) {
+            return res.json(err4);
+          }
+          return res.json({
+            "success":{
+              "code":201,
+              "message":"Password updated successfully."
+            }
+          });
+        });
+      });
     });
   });
 });

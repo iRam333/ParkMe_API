@@ -1,5 +1,7 @@
 require('dotenv').config();
 
+var helmet = require('helmet');
+var session = require('cookie-session');
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -9,10 +11,12 @@ var bodyParser = require('body-parser');
 var cors = require('cors');
 var jwt = require('jsonwebtoken');
 
+// routes
 var index = require('./routes/index');
+var account = require('./routes/account');
 var user = require('./routes/user');
 var establishment = require('./routes/establishment');
-var zone = require('./routes/zone');
+var parkingLot = require('./routes/parkingLot');
 
 var app = express();
 
@@ -22,14 +26,37 @@ app.set('view engine', 'jade');
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
-
+app.set('trust proxy', 1);
+app.use(helmet({
+  contentSecurityPolicy: {
+    directives: {
+      defaultSrc: ["'self'"]
+    }
+  },
+  expectCt: true,
+  /*hpkp: {
+    maxAge: 7776000,
+    sha256s: [process.env.HPKP_SEC, process.env.HPKP_SEC_BCKP]
+  },*/
+  noCache: true,
+  referrerPolicy: true
+}));
+/*app.use(session({
+  name: 'pme',
+  keys: [process.env.CKSSON1, process.env.CKSSON2],
+  cookie: {
+    secure: true,
+    httpOnly: true,
+    domain: 'localhost:3000'
+  }
+}));*/
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(function (req, res, next) {
-  if (req._parsedUrl.pathname == '/user/login' || req._parsedUrl.pathname == '/user/signUp'){
+/*app.use(function (req, res, next) {
+  if (req._parsedUrl.pathname == '/account/login' || req._parsedUrl.pathname == '/account/signUp'){
     next();
   }
   else {
@@ -52,11 +79,12 @@ app.use(function (req, res, next) {
     }
   }
 });
-
+*/
 app.use('/', index);
 app.use('/user', user);
+app.use('/account', account);
 app.use('/establishment', establishment);
-app.use('/zone', zone);
+app.use('/parkingLot', parkingLot);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
