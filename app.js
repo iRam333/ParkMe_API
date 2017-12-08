@@ -55,8 +55,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-/*app.use(function (req, res, next) {
-  if (req._parsedUrl.pathname == '/account/login' || req._parsedUrl.pathname == '/account/signUp'){
+app.use(function (req, res, next) {
+  if (req._parsedUrl.pathname == '/account/login' || req._parsedUrl.pathname == '/account/signUp' || req._parsedUrl.pathname == '/'){
     next();
   }
   else {
@@ -64,7 +64,10 @@ app.use(express.static(path.join(__dirname, 'public')));
       var token = req.headers.authorization.split(" ");
       jwt.verify(token[1], process.env.EJWT, function (err, decode) {
         if (err) {
-          res.json({"errors":{"code":401, "message":"Invalid token."}});
+          res.json({"errors":{
+            "code":401,
+            "message":"Invalid token."}
+          });
           req.user = undefined;
         }
         else {
@@ -75,11 +78,13 @@ app.use(express.static(path.join(__dirname, 'public')));
     }
     else {
       req.user = undefined;
-      res.json({"errors":{"code":401, "message":"No authorization token was found."}});
+      res.json({"errors":{
+        "code":401,
+        "message":"No authorization token was found."}
+      });
     }
   }
 });
-*/
 app.use('/', index);
 app.use('/user', user);
 app.use('/account', account);
