@@ -1,0 +1,18 @@
+.nav1 {
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.nav2 {
+  background-color: #3c5a82;
+}
+
+.page-footer {
+  background-color: #3c5a82;
+}
+
+.icon {
+  height: 42px;
+  width: 42px;
+  margin: 4px 4px;
+}
