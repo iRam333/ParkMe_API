@@ -30,7 +30,11 @@ app.set('trust proxy', 1);
 app.use(helmet({
   contentSecurityPolicy: {
     directives: {
-      defaultSrc: ["'self'"]
+      defaultSrc: ["'self'"],
+      styleSrc: ["'self'", 'cdnjs.cloudflare.com', 'fonts.googleapis.com'],
+      fontSrc:["'self'", 'cdnjs.cloudflare.com', 'fonts.googleapis.com', 'fonts.gstatic.com'],
+      scriptSrc:["'self'", 'cdnjs.cloudflare.com', 'code.jquery.com'],
+      imgSrc:["'self'"]
     }
   },
   expectCt: true,
@@ -41,15 +45,6 @@ app.use(helmet({
   noCache: true,
   referrerPolicy: true
 }));
-/*app.use(session({
-  name: 'pme',
-  keys: [process.env.CKSSON1, process.env.CKSSON2],
-  cookie: {
-    secure: true,
-    httpOnly: true,
-    domain: 'localhost:3000'
-  }
-}));*/
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
