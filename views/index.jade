@@ -1,7 +1,97 @@
-extends layout
+doctype html
+html
+  head
+    title= 'ParqueaMe - The smart way to park'
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css')
+    link(rel='stylesheet', href='https://fonts.googleapis.com/icon?family=Material+Icons')
+    link(rel='stylesheet', href='/stylesheets/style.css')
 
-block content
-  h1= title
-  p Welcome to #{title}
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
 
-  
+  body
+    .navbar-fixed
+      nav.transparent
+        .nav-wrapper
+          a.brand-logo.hide-on-med-and-down(href='#main')
+            img(src='/images/logo.png', alt='ParqueaMe')
+          a.button-collapse(href='#!', data-activates='mobile')
+            i.material-icons#collapsable-menu menu
+          ul.right.hide-on-med-and-down
+            li
+              a(href='#what') What's ParqueaMe?
+            li
+              a(href='#team') Team
+            li
+              a(href='#contact') Contact Us
+          ul#mobile.side-nav
+            li
+              a.mobile-logo(href='#main')
+                img(src='images/mobile-logo.png')
+            .divider
+            li
+              a(href='#what')
+                i.material-icons place
+                | What's ParqueaMe?
+            li
+              a(href='#team')
+                i.material-icons person_pin_circle
+                | Team
+            li
+              a(href='#contact')
+                i.material-icons mail
+                | Contact Us
+
+    .parallax-container#main
+      .parallax
+        .filter.blue-grey.darken-4
+        img(src='/images/traffic.jpg')
+        .caption.right-align.hide-on-med-and-down
+          h2.white-text <strong>THE SMART WAY TO PARK</strong>
+        .mobile-caption.left-align.hide-on-large-only
+          h2.white-text <strong>THE SMART WAY TO PARK</strong>
+
+    .section.white#what
+      .row.container
+        h2.header Parallax
+        p.grey-text.text-darken-3.lighten-3
+          | Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling. Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling. Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling. Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling. Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling. Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling. Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling. Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling. Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling. Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling. Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling.
+
+    .section.white#team
+      .row.container
+        h2.header Parallax
+        p.grey-text.text-darken-3.lighten-3
+          | Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling. Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling. Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling. Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling. Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling. Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling. Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling. Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling. Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling. Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling. Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling.
+
+    .section.white#contact
+      .row.container
+        h2.header Parallax
+        p.grey-text.text-darken-3.lighten-3
+          | Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling. Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling. Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling. Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling. Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling. Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling. Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling. Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling. Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling. Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling. Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling.
+
+    footer.page-footer.blue-grey.darken-4
+      .container
+        .row
+          .col.l6.s12
+            h5.white-text ParqueaMe
+            p.grey-text.text-lighten-4 What will you do with the time you won't waste looking for a parking spot?
+          .col.l4.offset-l2.s12
+            h5.white-text Follow Us
+            a.social-icon(href='#!')
+              img(src='/images/if_facebook.png', alt='facebook')
+            a.social-icon(href='#!')
+              img(src='/images/if_twitter.png', alt='twitter')
+            a.social-icon(href='#!')
+              img(src='/images/if_instagram.png', alt='instagram')
+            a.social-icon(href='#!')
+              img(src='/images/if_youtube.png', alt='youtube')
+            a.social-icon(href='#!')
+              img(src='/images/if_linkedin.png', alt='linkedin')
+            a.social-icon(href='#!')
+              img(src='/images/if_github.png', alt='github')
+      .footer-copyright
+        .container
+          | © 2017 Copyright Text <strong>ParqueaMe</strong>, All rights reserved.
+
+    script(type='text/javascript', src='https://code.jquery.com/jquery-3.2.1.min.js')
+    script(type='text/javascript', src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js')
+    script(type='text/javascript', src='/javascripts/main.js')

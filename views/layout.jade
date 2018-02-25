@@ -1,46 +1,10 @@
-doctype html
-html
-  head
-    title= title
-    link(rel='stylesheet', href='/stylesheets/materialize.min.css')
-    link(rel='stylesheet', href='/stylesheets/style.css')
-    meta(name='viewport', content='width=device-width, initial-scale=1.0')
-  body
-    nav.nav2
-      .nav-wrapper
-        a.brand-logo(href='#') Logo
-        ul#nav-mobile.right.hide-on-med-and-down
-          li
-            a(href='sass.html') Sass
-          li
-            a(href='badges.html') Components
-          li
-            a(href='collapsible.html') JavaScript
+//-
+  extends layout
+    block content
+      h1= title
+      p Welcome to #{title}
 
     block content
-
-    footer.page-footer
-      .container
-        .row
-          .col.l6.s12
-            h5.white-text ParqueaMe
-            p.grey-text.text-lighten-4 La vida es aquella que pasa mientras buscas un parqueadero.
-          .col.l4.offset-l2.s12
-            h5.white-text Siguenos
-            a(href='/facebook')
-              img(src='/images/facebook.png', alt='Facebook').icon
-            a(href='/twitter')
-              img(src='/images/twitter.png', alt='Twitter').icon
-            a(href='/linkedin')
-              img(src='/images/linkedin.png', alt='linkedin').icon
-            a(href='/github')
-              img(src='/images/github.png', alt='GitHub').icon
-      .footer-copyright
-        .container
-          | © 2017 Copyright&nbsp
-          strong ParqueaMe APP&nbsp
-          | All Rights Reserved.
-
-
-    script(type=('text/javascript'), src='/js/jquery-3.2.1.min.js')
-    script(type=('text/javascript'), src='/js/materialize.min.js')
+      h1= message
+      h2= error.status
+      pre #{error.stack}

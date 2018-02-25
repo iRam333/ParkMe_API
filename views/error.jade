@@ -1,6 +1,21 @@
-extends layout
+doctype html
+html
+  head
+    title= 'ParqueApp Me - The smart way to park'
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css')
+    link(rel='stylesheet', href='https://fonts.googleapis.com/icon?family=Material+Icons')
+    link(rel='stylesheet', href='/stylesheets/error.css')
 
-block content
-  h1= message
-  h2= error.status
-  pre #{error.stack}
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+
+  body
+
+    .container.center-align
+      img.error-img.responsive-img(src='/images/error.jpg', alt='Error 404')
+      p.error-title Parking 404
+      p.error-description The page you are looking for is not available.
+      a.waves-effect.waves-light.btn.blue-grey(href='/') Go to main
+
+    script(type='text/javascript', src='https://code.jquery.com/jquery-3.2.1.min.js')
+    script(type='text/javascript', src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js')
+    script(type='text/javascript', src='/javascripts/error.js')
