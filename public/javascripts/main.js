@@ -73,3 +73,10 @@ $(document).ready(function(){
 	});
 
 });
+
+$( window ).on('load', function() {
+
+  $(".loader-background").fadeOut("slow", function () {
+  });
+
+});
