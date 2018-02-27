@@ -21,6 +21,7 @@ var parkingLot = require('./routes/parkingLot');
 var app = express();
 
 console.log("-----------------------------------------------------------------------------------------------");
+console.log(process.env.NODE_ENV);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
