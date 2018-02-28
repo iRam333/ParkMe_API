@@ -2,9 +2,9 @@ var config = {
   production: {
     database: {
       host: 'us-cdbr-iron-east-05.cleardb.net',
-      name: 'heroku_7a176930c8e5be3',
-      user: 'b9f10bc17929e4',
-      password: 'cf2fe6b9'
+      name: 'heroku_37a91b7ce59b9e2',
+      user: 'b073ceb517e9e3',
+      password: ' b5c083aa'
     },
     env: {
       ejwt: '4f9LuFZB8YgynuRJ',
