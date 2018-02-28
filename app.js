@@ -1,5 +1,6 @@
 require('dotenv').config();
 
+var config = require('./config.js').get(process.env.NODE_ENV);
 var helmet = require('helmet');
 var session = require('cookie-session');
 var express = require('express');
@@ -19,9 +20,6 @@ var establishment = require('./routes/establishment');
 var parkingLot = require('./routes/parkingLot');
 
 var app = express();
-
-console.log("-----------------------------------------------------------------------------------------------");
-console.log(process.env.NODE_ENV);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -43,7 +41,7 @@ app.use(helmet({
   expectCt: true,
   /*hpkp: {
     maxAge: 7776000,
-    sha256s: [process.env.HPKP_SEC, process.env.HPKP_SEC_BCKP]
+    sha256s: [config.env.hpkp_sec, config.env.hpkp_sec_bckp]
   },*/
   noCache: true,
   referrerPolicy: true
@@ -60,7 +58,7 @@ app.use(function (req, res, next) {
   else {
     if (req.headers && req.headers.authorization) {
       var token = req.headers.authorization.split(" ");
-      jwt.verify(token[1], process.env.EJWT, function (err, decode) {
+      jwt.verify(token[1], config.env.ejwt, function (err, decode) {
         if (err) {
           res.json({"errors":{
             "code":401,

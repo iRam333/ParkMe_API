@@ -1,10 +1,11 @@
 var mysql = require('mysql');
+var config = require('./config.js').get(process.env.NODE_ENV);
 
 var connection = mysql.createPool({
-  host: process.env.DB_HOST,
-  user: process.env.DB_USER,
-  password: process.env.DB_PASS,
-  database: process.env.DB_NAME
+  host: config.database.host,
+  user: config.database.user,
+  password: config.database.password,
+  database: config.database.name
 });
 
 module.exports = connection;

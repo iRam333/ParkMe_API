@@ -4,10 +4,11 @@ var _ = require('lodash');
 var jwt = require('jsonwebtoken');
 var bcrypt = require('bcrypt');
 var user = require('../models/user');
+var config = require('../config.js').get(process.env.NODE_ENV);
 
 // Create the token
 function createToken(user) {
-  return "Bearer " + jwt.sign(_.omit(user, 'password'), process.env.EJWT, {
+  return "Bearer " + jwt.sign(_.omit(user, 'password'), config.env.ejwt, {
     expiresIn: 60*60*5
   });
 }

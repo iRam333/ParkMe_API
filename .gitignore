@@ -46,3 +46,4 @@ sql_database
 
 # Yarn Integrity file
 .yarn-integrity
+.env

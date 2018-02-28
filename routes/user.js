@@ -3,10 +3,11 @@ var router = express.Router();
 var ejwt = require('express-jwt');
 var bcrypt = require('bcrypt');
 var user = require('../models/user');
+var config = require('../config.js').get(process.env.NODE_ENV);
 
 // Check JWT
 var jwtCheck = ejwt({
-  secret: process.env.EJWT
+  secret: config.env.ejwt
 });
 
 // Check if username is available

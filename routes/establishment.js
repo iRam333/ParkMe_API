@@ -2,9 +2,10 @@ var express = require('express');
 var router = express.Router();
 var ejwt = require('express-jwt');
 var establishment = require('../models/establishment');
+var config = require('../config.js').get(process.env.NODE_ENV);
 
 var jwtCheck = ejwt({
-  secret: process.env.EJWT
+  secret: config.env.ejwt
 });
 
 // Get all establishments or just one by its ID

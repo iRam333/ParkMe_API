@@ -2,9 +2,10 @@ var express = require('express');
 var router = express.Router();
 var ejwt = require('express-jwt');
 var parkingLot = require('../models/parkingLot');
+var config = require('../config.js').get(process.env.NODE_ENV);
 
 var jwtCheck = ejwt({
-  secret: process.env.EJWT
+  secret: config.env.ejwt
 });
 
 // Get parking lot by its establishment ID
