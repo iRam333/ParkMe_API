@@ -74,10 +74,11 @@ app.use(function (req, res, next) {
     }
     else {
       req.user = undefined;
-      res.json({"errors":{
+      /*res.json({"errors":{
         "code":401,
         "message":"No authorization token was found."}
-      });
+      });*/
+      res.render('error');
     }
   }
 });
