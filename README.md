@@ -11,10 +11,6 @@ ParqueaMe App es un proyecto de grado para obtener el título de profesional en 
 **ParqueaMe** se divide en tres componentes:
  * Servidor Restful, diseñado y desarrollado con [**Node JS**](https://nodejs.org/en/) y la base de datos [**MySQL**](https://www.mysql.com/). De igual manera, el servidor se encuentra almacenado en [**Heroku**](https://www.heroku.com/) (PaaS).
  * Aplicativo Móvil, desarrollado con el framework [**IONIC**](https://ionicframework.com/) y el ambiente de [**Android Studio**](https://developer.android.com/studio/index.html).
-<<<<<<< HEAD
  * Dispositivo de detección de vehículos, _**DISPOSITIVO Y DEMáS**_.
-=======
- * Dispositivo de detección de vehículos, DISPOSITIVO Y DEMÁS.
->>>>>>> 3873955cf922043d169227e9c9e9340603864f92
 
 Diseñado y desarrollado por **Iván Fernando Ramírez** y **Fabio Alessandro Gatti**.
