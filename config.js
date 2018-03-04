@@ -8,8 +8,6 @@ var config = {
     },
     env: {
       ejwt: '4f9LuFZB8YgynuRJ',
-      hpkp_sec: 'T~%#A&VAp6a86Mxj',
-      hpkp_sec_bckp: 'p))T``GTWDCK(7km',
       cksson1: 'Ppe>Db<mZ4]&k86N',
       cksson2: '5LCd?tt8m>#-pTES',
       salt_pss: '10'
@@ -24,8 +22,6 @@ var config = {
     },
     env: {
       ejwt: '4f9LuFZB8YgynuRJ',
-      hpkp_sec: 'T~%#A&VAp6a86Mxj',
-      hpkp_sec_bckp: 'p))T``GTWDCK(7km',
       cksson1: 'Ppe>Db<mZ4]&k86N',
       cksson2: '5LCd?tt8m>#-pTES',
       salt_pss: '10'
