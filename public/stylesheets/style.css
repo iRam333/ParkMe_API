@@ -112,6 +112,55 @@ nav .brand-logo img {
 	padding-top: 4rem;
 }
 
+.cont {
+    position: relative;
+    width: 50%;
+}
+
+.image {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.middleText {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.cont:hover .image {
+  opacity: 0.3;
+}
+
+.cont:hover .middleText {
+  opacity: 1;
+}
+
+.text {
+	color: black;
+  font-size: 20px;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.description{
+	font-size: 1.4em;
+}
+
+
 /*.bg-theme {
 	background: -webkit-linear-gradient(90deg, #9dc7d1 60%, #448291 60%);
   background: -o-linear-gradient(90deg, #9dc7d1 60%, #448291 60%);

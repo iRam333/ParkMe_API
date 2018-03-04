@@ -1,16 +1,13 @@
 doctype html
 html
   head
-    title= 'ParqueaMe - The smart way to park'
+    title ParqueaMe - The smart way to park
     link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css')
     link(rel='stylesheet', href='https://fonts.googleapis.com/icon?family=Material+Icons')
     link(rel='stylesheet', href='/stylesheets/loader.css')
     link(rel='stylesheet', href='/stylesheets/style.css')
-
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
-
   body
-    
     .loader-background
       .loader-wrapper
         .loader
@@ -22,14 +19,13 @@ html
         #loader3.loader
           .roller
           .roller
-                          
     .navbar-fixed
       nav.transparent
         .nav-wrapper
           a.brand-logo.hide-on-med-and-down(href='#main')
             img(src='/images/logo.png', alt='ParqueaMe')
           a.button-collapse(href='#!', data-activates='mobile')
-            i.material-icons#collapsable-menu menu
+            i#collapsable-menu.material-icons menu
           ul.right.hide-on-med-and-down
             li
               a(href='#what') What's ParqueaMe?
@@ -54,34 +50,65 @@ html
               a(href='#contact')
                 i.material-icons mail
                 | Contact Us
-
-    .parallax-container#main
+    #main.parallax-container
       .parallax
         .filter.blue-grey.darken-4
         img(src='/images/traffic.jpg')
         .caption.right-align.hide-on-med-and-down
-          h2.white-text <strong>THE SMART WAY TO PARK</strong>
+          h2.white-text
+            strong THE SMART WAY TO PARK
         .mobile-caption.left-align.hide-on-large-only
-          h2.white-text <strong>THE SMART WAY TO PARK</strong>
-
-    .section.white#what
+          h2.white-text
+            strong THE SMART WAY TO PARK
+    #what.section.white
       .row.container
         h2.header Parallax
         p.grey-text.text-darken-3.lighten-3
           | Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling. Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling. Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling. Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling. Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling. Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling. Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling. Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling. Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling. Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling. Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling.
-
-    .section.white#team
+    #team.section.white
       .row.container
         h2.header Parallax
         p.grey-text.text-darken-3.lighten-3
           | Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling. Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling. Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling. Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling. Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling. Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling. Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling. Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling. Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling. Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling. Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling.
-
-    .section.white#contact
+          .row
+            .col.s12.m4.l4.center
+              .card-panel.grey.lighten-5.z-depth-1
+                .row
+                  .col.s8.offset-s2.cont
+                    img.circle.image.responsive-img(src='images/ivan2.jpg', alt='').z-depth-1
+                    .middleText
+                      p.text
+                        | Ivan Fernando Ramirez
+                //h5.center-align Ivan Fernando Ramirez
+                p.center-align.description
+                  | Alias el calvo: encargado de hacer las cosas nerds
+            .col.s12.m4.l4.center 
+              .card-panel.grey.lighten-5.z-depth-1
+                .row
+                  .col.s8.offset-s2.cont
+                    img.circle.image.responsive-img(src='images/cifuentes.jpg', alt='').z-depth-1
+                    .middleText
+                      p.text
+                        | Juan Pablo Cifuentes
+                // h5.center-align Juan Pablo Cifuentes
+                p.center-align.description
+                  | Alias el so: encargado de asesorar a los socios
+            .col.s12.m4.l4.center 
+              .card-panel.grey.lighten-5.z-depth-1
+                .row
+                  .col.s8.offset-s2.cont
+                    img.circle.image.responsive-img(src='images/fabio2.jpg', alt='').z-depth-1
+                    .middleText
+                      p.text
+                        | Fabio Alessandro Gatti
+                // h5.center-align Fabio Alessandro Gatti
+                p.center-align.description
+                  | Alias el sesi: encargado de hacer las cosas bonitas y pros
+    #contact.section.white
       .row.container
         h2.header Parallax
         p.grey-text.text-darken-3.lighten-3
           | Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling. Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling. Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling. Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling. Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling. Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling. Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling. Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling. Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling. Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling. Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling.
-
     footer.page-footer.blue-grey.darken-4
       .container
         .row
@@ -104,8 +131,9 @@ html
               img(src='/images/if_github.png', alt='github')
       .footer-copyright
         .container
-          | © 2017 Copyright Text <strong>ParqueaMe</strong>, All rights reserved.
-
+          | © 2017 Copyright Text 
+          strong ParqueaMe
+          | , All rights reserved.
     script(type='text/javascript', src='https://code.jquery.com/jquery-3.2.1.min.js')
     script(type='text/javascript', src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js')
     script(type='text/javascript', src='/javascripts/main.js')
