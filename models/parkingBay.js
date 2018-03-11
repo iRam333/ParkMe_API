@@ -2,7 +2,7 @@ var db = require('../dbconnection');
 
 var parkingBay = {
   updateParkingBay:function(parkingBay, callback) {
-    db.query("SELECT ID_PARKING_BAY FROM PARKING_BAY WHERE NUM_LATITUDE = 3.349227 AND NUM_LONGITUDE = -76.531410", [parseFloat(parkingBay.latitude), parseFloat(parkingBay.longitude)], function (err, rows) {
+    db.query("SELECT ID_PARKING_BAY FROM PARKING_BAY WHERE NUM_LATITUDE = ? AND NUM_LONGITUDE = ?", [parseFloat(parkingBay.latitude), parseFloat(parkingBay.longitude)], function (err, rows) {
       if (err) {
         return res.json(err);
       }
