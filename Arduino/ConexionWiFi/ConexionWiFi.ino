@@ -58,6 +58,10 @@ void loop()
     http.end(); //Close connection
     
   }
+  
+  else{
+    Serial.println("Not connected");
+  }
 
   delay(30000); //Send request every 30 secs
 
