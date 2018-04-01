@@ -1,5 +1,17 @@
 $(document).ready(function(){
 
+	var date = new Date(2018, 4, 15);
+	var now = new Date();
+	var diff = (date.getTime()/1000) - (now.getTime()/1000);
+
+	$('.counter').FlipClock(diff, {
+		clockFace: 'DailyCounter',
+		countdown: true,
+		language: 'spanish'
+	});
+
+	$(".flip > ul > li > a").attr("disabled", "disabled");
+
 	if ($(window).scrollTop() >= $('.parallax-container').height() - 116) {
 		$('nav .brand-logo > img').css("height", "48px");
 		$('nav .brand-logo').css("margin", "0 64px");
@@ -18,7 +30,7 @@ $(document).ready(function(){
 		$('nav').removeClass('darken-4');
 	}
 
-	$(".button-collapse").sideNav({
+	$(".sidenav").sidenav({
 		closeOnClick: true
 	});
 
@@ -76,7 +88,7 @@ $(document).ready(function(){
 
 $( window ).on('load', function() {
 
-  $(".loader-background").fadeOut("slow", function () {
-  });
+	$(".loader-background").fadeOut("slow", function () {
+	});
 
 });

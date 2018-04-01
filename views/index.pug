@@ -1,139 +1,137 @@
 doctype html
 html
   head
-    title ParqueaMe - The smart way to park
-    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css')
+    title ParqueaMe - La mejor forma de parquear
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css')
     link(rel='stylesheet', href='https://fonts.googleapis.com/icon?family=Material+Icons')
     link(rel='stylesheet', href='/stylesheets/loader.css')
+    link(rel='stylesheet', href='/stylesheets/flipclock.css')
     link(rel='stylesheet', href='/stylesheets/style.css')
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
   body
+    
     .loader-background
-      .loader-wrapper
-        .loader
-          .roller
-          .roller
-        #loader2.loader
-          .roller
-          .roller
-        #loader3.loader
-          .roller
-          .roller
+      .scene
+        img.car(src='/images/loader/car.svg', alt='')
+        img.poof(src='/images/loader/poof.svg', alt='')
+        img.sign(src='/images/loader/sign.svg', alt='')
+        
     .navbar-fixed
       nav.transparent
         .nav-wrapper
           a.brand-logo.hide-on-med-and-down(href='#main')
             img(src='/images/logo.png', alt='ParqueaMe')
-          a.button-collapse(href='#!', data-activates='mobile')
-            i#collapsable-menu.material-icons menu
+          a.sidenav-trigger(href='#', data-target='slide-out')
+            i.material-icons menu
           ul.right.hide-on-med-and-down
             li
-              a(href='#what') What's ParqueaMe?
+              a(href='#what') ¿Qué es ParqueaMe?
             li
-              a(href='#team') Team
+              a(href='#aboutus') Acerca de nosotros
             li
-              a(href='#contact') Contact Us
-          ul#mobile.side-nav
-            li
-              a.mobile-logo(href='#main')
-                img(src='images/mobile-logo.png')
-            .divider
-            li
-              a(href='#what')
-                i.material-icons place
-                | What's ParqueaMe?
-            li
-              a(href='#team')
-                i.material-icons person_pin_circle
-                | Team
-            li
-              a(href='#contact')
-                i.material-icons mail
-                | Contact Us
+              a(href='#soon') Espéralo
+              
+    ul#slide-out.sidenav
+      li
+        a.mobile-logo(href='#main')
+          img(src='images/mobile-logo.png')
+      .divider
+      li
+        a(href='#what')
+          i.material-icons place
+          | ¿Qué es ParqueaMe?
+      li
+        a(href='#aboutus')
+          i.material-icons person_pin_circle
+          | Acerca de nosotros
+      li
+        a(href='#soon')
+          i.material-icons access_time
+          | Espéralo
+
     #main.parallax-container
       .parallax
         .filter.blue-grey.darken-4
         img(src='/images/traffic.jpg')
         .caption.right-align.hide-on-med-and-down
           h2.white-text
-            strong THE SMART WAY TO PARK
+            strong LA MEJOR FORMA DE PARQUEAR
         .mobile-caption.left-align.hide-on-large-only
           h2.white-text
-            strong THE SMART WAY TO PARK
+            strong LA MEJOR FORMA DE PARQUEAR
     #what.section.white
-      .row.container
-        h2.header Parallax
-        p.grey-text.text-darken-3.lighten-3
-          | Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling. Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling. Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling. Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling. Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling. Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling. Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling. Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling. Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling. Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling. Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling.
-    #team.section.white
-      .row.container
-        h2.header Parallax
-        p.grey-text.text-darken-3.lighten-3
-          | Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling. Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling. Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling. Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling. Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling. Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling. Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling. Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling. Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling. Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling. Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling.
-          .row
-            .col.s12.m4.l4.center
-              .card-panel.grey.lighten-5.z-depth-1
-                .row
-                  .col.s8.offset-s2.cont
-                    img.circle.image.responsive-img(src='images/ivan2.jpg', alt='').z-depth-1
-                    .middleText
-                      p.text
-                        | Ivan Fernando Ramirez
-                //h5.center-align Ivan Fernando Ramirez
-                p.center-align.description
-                  | Alias el calvo: encargado de hacer las cosas nerds
-            .col.s12.m4.l4.center 
-              .card-panel.grey.lighten-5.z-depth-1
-                .row
-                  .col.s8.offset-s2.cont
-                    img.circle.image.responsive-img(src='images/cifuentes.jpg', alt='').z-depth-1
-                    .middleText
-                      p.text
-                        | Juan Pablo Cifuentes
-                // h5.center-align Juan Pablo Cifuentes
-                p.center-align.description
-                  | Alias el so: encargado de asesorar a los socios
-            .col.s12.m4.l4.center 
-              .card-panel.grey.lighten-5.z-depth-1
-                .row
-                  .col.s8.offset-s2.cont
-                    img.circle.image.responsive-img(src='images/fabio2.jpg', alt='').z-depth-1
-                    .middleText
-                      p.text
-                        | Fabio Alessandro Gatti
-                // h5.center-align Fabio Alessandro Gatti
-                p.center-align.description
-                  | Alias el sesi: encargado de hacer las cosas bonitas y pros
-    #contact.section.white
-      .row.container
-        h2.header Parallax
-        p.grey-text.text-darken-3.lighten-3
-          | Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling. Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling. Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling. Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling. Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling. Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling. Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling. Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling. Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling. Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling. Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling.
+      
+       
+    #aboutus.section.white
+     .container
+      h2.header.center-align Acerca de nosotros
+      .row
+       .col.s12.m12.l4
+        .row
+         .col.s12.m4.l12.cont
+          .background
+           img.circle.image.responsive-img(src='images/cifuentes.jpg')
+           .middleText
+            p.text
+             | Juan Pablo Cifuentes
+         .col.s12.offset-m1.m7.l12
+          p.center-align
+           | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+       .col.s12.m12.l4
+        .row
+         .col.s12.m4.l12.cont
+          .background
+           img.circle.image.responsive-img(src='images/fabio.jpg')
+           .middleText
+            p.text
+             | Fabio Alessandro Gatti
+         .col.s12.offset-m1.m7.l12
+          p.center-align
+           | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+       .col.s12.m12.l4
+        .row
+         .col.s12.m4.l12.cont
+          .background
+           img.circle.image.responsive-img(src='images/ivan.jpg')
+           .middleText
+            p.text
+             | Iván Fernando Ramírez
+         .col.s12.offset-m1.m7.l12
+           p.center-align
+            | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        
+    #soon.section.white
+      .container
+        h2.header.center-align Espéralo
+        .counter
+          
     footer.page-footer.blue-grey.darken-4
       .container
         .row
           .col.l6.s12
             h5.white-text ParqueaMe
-            p.grey-text.text-lighten-4 What will you do with the time you won't waste looking for a parking spot?
+            p.grey-text.text-lighten-4 Encuentra un parqueadero fácil y rápido de forma inteligente
           .col.l4.offset-l2.s12
-            h5.white-text Follow Us
+            h5.white-text Síguenos
             a.social-icon(href='#!')
-              img(src='/images/if_facebook.png', alt='facebook')
+              img(src='/images/social-icons/if_facebook.png', alt='facebook')
             a.social-icon(href='#!')
-              img(src='/images/if_twitter.png', alt='twitter')
+              img(src='/images/social-icons/if_twitter.png', alt='twitter')
             a.social-icon(href='#!')
-              img(src='/images/if_instagram.png', alt='instagram')
+              img(src='/images/social-icons/if_instagram.png', alt='instagram')
             a.social-icon(href='#!')
-              img(src='/images/if_youtube.png', alt='youtube')
+              img(src='/images/social-icons/if_youtube.png', alt='youtube')
             a.social-icon(href='#!')
-              img(src='/images/if_linkedin.png', alt='linkedin')
+              img(src='/images/social-icons/if_linkedin.png', alt='linkedin')
             a.social-icon(href='#!')
-              img(src='/images/if_github.png', alt='github')
+              img(src='/images/social-icons/if_github.png', alt='github')
       .footer-copyright
         .container
-          | © 2017 Copyright Text 
-          strong ParqueaMe
-          | , All rights reserved.
+          | © 2017 Derechos de autor 
+          b ParqueaMe
+          | , Todos los derechos reservados.
+          
     script(type='text/javascript', src='https://code.jquery.com/jquery-3.2.1.min.js')
-    script(type='text/javascript', src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js')
+    script(type='text/javascript', src='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js')
+    script(type='text/javascript', src='/javascripts/flipclock.min.js')
     script(type='text/javascript', src='/javascripts/main.js')
