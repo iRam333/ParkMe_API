@@ -11,8 +11,11 @@ const int led = D8;
 /*char ssid[] = "FABIO GATTI";
 char password[] = "autentico";*/
 
-char ssid[] = "Apto501";
-char password[] = "rNbT9kRbgeSsQ";
+char ssid[] = "AndroidAP";
+char password[] = "mfoq0723";
+
+/*char ssid[] = "Apto501";
+char password[] = "rNbT9kRbgeSsQ";*/
 
 int parkStatus = 2;
 int tempStatus;
@@ -28,11 +31,18 @@ void setup() {
   Serial.begin(115200);
 
   delay(3000);
-  WiFi.disconnect();
+  WiFi.disconnect(true);
   Serial.println("CONNECTING");
+  
   WiFi.begin(ssid,password);
-  while ((!(WiFi.status() == WL_CONNECTED))){
+  /*while ((!(WiFi.status() == WL_CONNECTED))){
     delay(300);
+    Serial.print("..");
+    Serial.print(WiFi.status());
+  }*/
+  while ((!(WiFi.status() == WL_CONNECTED))){
+    WiFi.begin(ssid,password);
+    delay(10000);
     Serial.print("..");
     //Serial.print(WiFi.status());
   }
@@ -101,8 +111,24 @@ void loop() {
   }
   
   else{
+    digitalWrite(led, HIGH);
+    WiFi.disconnect(true);
+    /*WiFi.begin(ssid,password);*/
+    /*while ((!(WiFi.status() == WL_CONNECTED))){
+      delay(300);
+      Serial.print("..");
+      Serial.print(WiFi.status());
+    }*/
+    while ((!(WiFi.status() == WL_CONNECTED))){
+      WiFi.begin(ssid,password);
+      delay(10000);
+      Serial.print("..");
+      //Serial.print(WiFi.status());
+    }
+    /*WiFi.begin(ssid,password);
     Serial.println("Not connected");
+    delay(15000);*/
   }
 
-
+  //delay(300);
 }

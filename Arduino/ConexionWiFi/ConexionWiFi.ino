@@ -9,8 +9,11 @@
 /*char ssid[] = "FABIO GATTI";
 char password[] = "autentico";*/
 
-char ssid[] = "Apto501";
-char password[] = "rNbT9kRbgeSsQ";
+char ssid[] = "AndroidAP";
+char password[] = "mfoq0723";
+
+/*char ssid[] = "Apto501";
+char password[] = "rNbT9kRbgeSsQ";*/
 
 void setup()
 {

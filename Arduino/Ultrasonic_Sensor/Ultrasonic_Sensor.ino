@@ -31,7 +31,7 @@ void loop() {
   Serial.println(duration);
   Serial.print("Distance: ");
   Serial.println(distance);
-  if(distance>10){
+  if(distance>20){
     digitalWrite(led, HIGH);
   }
   else{
