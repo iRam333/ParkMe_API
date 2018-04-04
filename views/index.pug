@@ -15,7 +15,7 @@ html
         img.car(src='/images/loader/car.svg', alt='')
         img.poof(src='/images/loader/poof.svg', alt='')
         img.sign(src='/images/loader/sign.svg', alt='')
-        
+
     .navbar-fixed
       nav.transparent
         .nav-wrapper
@@ -26,6 +26,8 @@ html
           ul.right.hide-on-med-and-down
             li
               a(href='#what') ¿Qué es ParqueaMe?
+            li
+              a(href='#foryou') Para ti
             li
               a(href='#aboutus') Acerca de nosotros
             li
@@ -41,6 +43,10 @@ html
           i.material-icons place
           | ¿Qué es ParqueaMe?
       li
+        a(href='#foryou')
+          i.material-icons child_care
+          | Para ti
+      li
         a(href='#aboutus')
           i.material-icons person_pin_circle
           | Acerca de nosotros
@@ -54,57 +60,118 @@ html
         .filter.blue-grey.darken-4
         img(src='/images/traffic.jpg')
         .caption.right-align.hide-on-med-and-down
-          h2.white-text
-            strong LA MEJOR FORMA DE PARQUEAR
+          h2.white-text.slogan LA MEJOR FORMA DE PARQUEAR
         .mobile-caption.left-align.hide-on-large-only
-          h2.white-text
-            strong LA MEJOR FORMA DE PARQUEAR
+          h2.white-text.slogan LA MEJOR FORMA DE PARQUEAR
+            
     #what.section.white
+      //- Este título y subtítulo son visibles, únicamente, cuando se muestra en una tablet o computador
+      h3.center-align.teal-text.text-lighten-2.title-section.hide-on-small-only ¿QUÉ ES PARQUEAME?
+      p.center-align.subtitle-section.blue-grey-text.hide-on-small-only Una Maravilla
       
+      //- Este título y subtítulo son visibles, únicamente, cuando se muestra en un smartphone
+      h3.center-align.teal-text.text-lighten-2.title-section.hide-on-med-and-up ¿QUÉ ES?
+      p.center-align.subtitle-section.blue-grey-text.hide-on-med-and-up Te Presentamos
+      
+      .container
+        .row
+          .col.s12.m12.l6
+            p.blue-grey-text.text-lighten-2.what-section
+              | ParqueaMe es un aplicativo que busca dar solución a uno de los problemas más molestos que podemos encontrar a la hora de salir a un centro comercial, universidad o establecimiento en general. Este problema consiste en encontrar un lugar disponible donde aparcar.
+            p.blue-grey-text.text-lighten-2.what-section.hide-on-small-only
+              | Pensado y desarrollado para todo tipo de usuarios, de tal forma que sea intuitivo y rápido, enfocado a un sólo objetivo sin dar tantas vueltas. De igual manera, ParqueaMe se integra con nuestro detector de espacios, un hardware desarrollado integramente para esta funcionalidad.
+          .col.s12.m12.l6
+            p.center-align.teal-text.text-lighten-2.slogan-section
+              i.material-icons format_quote
+              br
+              | Encuentra un parqueadero fácil y rápido de forma inteligente
+            
+    #foryou.section.white
+      //- Este título y subtítulo son visibles, únicamente, cuando se muestra en una tablet o computador
+      h3.center-align.teal-text.text-lighten-2.title-section.hide-on-small-only  ¿QUÉ TE PODÉMOS OFRECER?
+      p.center-align.subtitle-section.blue-grey-text.hide-on-small-only  Lo Mejor Para Ti
+      
+      //- Este título y subtítulo son visibles, únicamente, cuando se muestra en una tablet o computador
+      h3.center-align.teal-text.text-lighten-2.title-section.hide-on-med-and-up ¿Y PARA TI?
+      p.center-align.subtitle-section.blue-grey-text.hide-on-med-and-up Lo Mejor
+      
+      .container
+        .row
+          .col.s12.m12.l6
+            img.mockups(src="images/mockups/side1.png")
+          .col.s12.m12.l6
+            .tips
+              i.material-icons.left.teal-text.text-lighten-2 airline_seat_recline_extra
+              .benefit
+                h5.title.teal-text.text-lighten-2 Evita los nervios
+                p.blue-grey-text.text-lighten-2.description
+                  | Los usuarios evitarán situaciones estresantes.
+            .tips
+              i.material-icons.left.teal-text.text-lighten-2 access_alarm
+              .benefit
+                h5.title.teal-text.text-lighten-2 Maneja tu tiempo
+                p.blue-grey-text.text-lighten-2.description
+                  | Controlar en tiempo real los espacios de estacionamiento disponibles.
+            .tips
+              i.material-icons.left.teal-text.text-lighten-2 favorite_border
+              .benefit
+                h5.title.teal-text.text-lighten-2 Mejora la calidad de vida
+                p.blue-grey-text.text-lighten-2.description
+                  | Evitar la congestión del tráfico y reducir las emisiones de carbono en la ciudad con efectos positivos en términos de calidad de vida en toda la comunidad.
        
     #aboutus.section.white
-     .container
-      h2.header.center-align Acerca de nosotros
-      .row
-       .col.s12.m12.l4
+      //- Este título y subtítulo son visibles, únicamente, cuando se muestra en una tablet o computador
+      h3.center-align.teal-text.text-lighten-2.title-section.hide-on-small-only ACERCA DE NOSOTROS
+      //- Este título y subtítulo son visibles, únicamente, cuando se muestra en una tablet o computador
+      h3.center-align.teal-text.text-lighten-2.title-section.hide-on-med-and-up NOSOTROS
+      
+      p.center-align.subtitle-section.blue-grey-text  Somos Un Equipo
+      
+      .container
         .row
-         .col.s12.m4.l12.cont
-          .background
-           img.circle.image.responsive-img(src='images/cifuentes.jpg')
-           .middleText
-            p.text
-             | Juan Pablo Cifuentes
-         .col.s12.offset-m1.m7.l12
-          p.center-align
-           | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-       .col.s12.m12.l4
-        .row
-         .col.s12.m4.l12.cont
-          .background
-           img.circle.image.responsive-img(src='images/fabio.jpg')
-           .middleText
-            p.text
-             | Fabio Alessandro Gatti
-         .col.s12.offset-m1.m7.l12
-          p.center-align
-           | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-       .col.s12.m12.l4
-        .row
-         .col.s12.m4.l12.cont
-          .background
-           img.circle.image.responsive-img(src='images/ivan.jpg')
-           .middleText
-            p.text
-             | Iván Fernando Ramírez
-         .col.s12.offset-m1.m7.l12
-           p.center-align
-            | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          .col.s12.m12.l4
+            .row
+              .col.s12.m4.l12.cont
+                .background
+                  img.circle.image.responsive-img(src='images/cifuentes.jpg')
+                  .middleText
+                    p.text
+                      | Juan Pablo Cifuentes
+              .col.s12.offset-m1.m7.l12
+                p.center-align.blue-grey-text.text-darken-2
+                  | Stakeholder
+          .col.s12.m12.l4
+            .row
+              .col.s12.m4.l12.cont
+                .background
+                  img.circle.image.responsive-img(src='images/fabio.jpg')
+                  .middleText
+                    p.text
+                      | Fabio Alessandro Gatti
+              .col.s12.offset-m1.m7.l12
+                p.center-align.blue-grey-text.text-darken-2
+                  | Scrum Master, Product Owner, Diseñador y Desarrollador del aplicativo móvil, y Desarrollador del detector de automóviles.
+          .col.s12.m12.l4
+            .row
+              .col.s12.m4.l12.cont
+                .background
+                  img.circle.image.responsive-img(src='images/ivan.jpg')
+                  .middleText
+                    p.text
+                      | Iván Fernando Ramírez
+              .col.s12.offset-m1.m7.l12
+                p.center-align.blue-grey-text.text-darken-2
+                  | Scrum Developer, Desarrollador de base de datos, Desarrollador del servidor REST Api y la Página web principal.
         
     #soon.section.white
+      h3.center-align.teal-text.text-lighten-2.title-section ESPÉRALO
+      p.center-align.subtitle-section.blue-grey-text  Sabes que lo quieres
       .container
-        h2.header.center-align Espéralo
         .counter
-          
+        .badges
+          img.android-badge(src="images/badges/android.png")
+          img.apple-badge(src="images/badges/apple.png")
+                      
     footer.page-footer.blue-grey.darken-4
       .container
         .row
