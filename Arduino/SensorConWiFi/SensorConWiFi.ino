@@ -6,7 +6,7 @@
 #define authCode "dVB45j8eX6jJyqvOjvi2eYBEby8x3e0qo1HfIhD0"
 
 //String fbPath = "ParkingBay/Espacio1/status";
-String fbPath = "establishment/0/parkingLot/0/parkingBay/0/status";
+String fbPath = "sensors/0/parkingLot/0/status";
 
 /*void toggleFirebaseSensor(stat){
   Firebase.setInt(fbPath,stat);
