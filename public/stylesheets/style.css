@@ -56,17 +56,12 @@ nav ul a{
 	padding: 0 16px;
 }
 
-nav .brand-logo {
-	margin: 24px 64px;
-}
-
 nav .brand-logo img {
 	-webkit-transition: all 0.1s ease;
 	-moz-transition: all 0.1s ease;
 	-o-transition: all 0.1s ease;
 	transition: all 0.1s ease;
-	height: 120px;
-	margin: 4px;
+	margin: 8px 0;
 }
 
 .transparent {
@@ -330,4 +325,22 @@ nav .brand-logo img {
 .mockups {
 	width: 100%;
 	height: auto;
+	transform: translatey(0px);
+	animation: float 5s ease infinite;
+}
+
+.badges img {
+	padding: 2vw !important;
+}
+
+@keyframes float {
+	0% {
+		transform: translatey(0px);
+	}
+	50% {
+		transform: translatey(-24px);
+	}
+	100% {
+		transform: translatey(0px);
+	}
 }

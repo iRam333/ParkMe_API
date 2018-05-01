@@ -1,8 +1,10 @@
 $(document).ready(function(){
 
-	var date = new Date(2018, 4, 15);
+	var date = new Date(2018, 4, 18);
 	var now = new Date();
 	var diff = (date.getTime()/1000) - (now.getTime()/1000);
+
+	console.log(diff);
 
 	$('.counter').FlipClock(diff, {
 		clockFace: 'DailyCounter',
@@ -12,12 +14,12 @@ $(document).ready(function(){
 
 	$(".flip > ul > li > a").attr("disabled", "disabled");
 
-	if ($(window).scrollTop() >= $('.parallax-container').height() - 116) {
+	if ($(window).scrollTop() >= $('.parallax-container').height() - 140) {
 		$('nav .brand-logo > img').css("height", "48px");
-		$('nav .brand-logo').css("margin", "0 64px");
+		$('nav .brand-logo').css({"margin": "0 64px", "height": "64px"});
 	} else {
 		$('nav .brand-logo > img').css("height", "120px");
-		$('nav .brand-logo').css("margin", "24px 64px");
+		$('nav .brand-logo').css({"margin": "	24px 64px", "height": "auto"});
 	}
 
 	if ( $(window).scrollTop() >= $('.parallax-container').height() - 64) {
@@ -75,12 +77,12 @@ $(document).ready(function(){
 			$('nav').removeClass('darken-4');
 		}
 
-		if ($(window).scrollTop() >= $('.parallax-container').height() - 116) {
+		if ($(window).scrollTop() >= $('.parallax-container').height() - 140) {
 			$('nav .brand-logo > img').css("height", "48px");
-			$('nav .brand-logo').css("margin", "0 64px");
+			$('nav .brand-logo').css({"margin": "0 64px", "height": "64px"});
 		} else {
 			$('nav .brand-logo > img').css("height", "120px");
-			$('nav .brand-logo').css("margin", "24px 64px");
+			$('nav .brand-logo').css({"margin": "24px 64px", "height": "auto"});
 		}
 	});
 
