@@ -1,4 +1,4 @@
-[![ParqueaMe](https://i.imgur.com/HIBdyCB.png)](https://parqueame-app.herokuapp.com/)
+[![ParqueaMe](https://i.imgur.com/HIBdyCB.png)](http://parqueameapp.com/)
 
 ParqueaMe App es un proyecto de grado para obtener el título de profesional en Ingeniería de Sistemas y Ciencias de la Computación, en la Pontificia Universidad Javeriana sede Cali.
 
@@ -8,9 +8,16 @@ ParqueaMe App es un proyecto de grado para obtener el título de profesional en 
 
 # Cómo funciona ParqueaMe?
 
-**ParqueaMe** se divide en tres componentes:
- * Servidor Restful, diseñado y desarrollado con [**Node JS**](https://nodejs.org/en/) y la base de datos [**MySQL**](https://www.mysql.com/). De igual manera, el servidor se encuentra almacenado en [**Heroku**](https://www.heroku.com/) (PaaS).
- * Aplicativo Móvil, desarrollado con el framework [**IONIC**](https://ionicframework.com/) y el ambiente de [**Android Studio**](https://developer.android.com/studio/index.html).
- * Dispositivo de detección de vehículos, _**DISPOSITIVO Y DEMáS**_.
+**ParqueaMe** fue desarrollado con las siguientes técnologías:
+ * [**Firebase Realtime DataBase**](https://firebase.google.com/docs/database/?hl=es-419), es la base de datos del aplicativo, que nos permita almacenar y propagar la información a todos los dispositivos conectados a internet, en tiempo real.
+ * [**IONIC Framework**](https://ionicframework.com/), es el framework utilizado para el desarrollo del aplicativo web y móvil, nos permite exportar los desarrollos como aplicaciones híbridas para los sistemas operativos Android e iOS.
+
+En cuanto al dispositivo detector, este fue diseñado haciendo uso de los siguientes componentes:
+ * **Nodemcu esp8266**, chip para la conexión WiFi y el manejo de datos.
+ * **HC-SR04**, sensor de ultrasonido para la medición y detección de vehículos.
+ * **ASM125**, regulador de voltaje 12V o 9V a 5V.
+ * **Baterías 9V**, baterías alcalinas para darle energía al dispositivo.
+
+![ParqueaMe App](https://i.imgur.com/OczFapg.png)
 
 Diseñado y desarrollado por **Iván Fernando Ramírez** y **Fabio Alessandro Gatti**.
