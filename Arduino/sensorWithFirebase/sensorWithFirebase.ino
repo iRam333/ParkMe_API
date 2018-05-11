@@ -144,6 +144,7 @@ void loop() {
       else{
         digitalWrite(led, LOW);
       }
+      //delay(7000);
       Firebase.setInt(fbPath,parkStatus); //Envia los datos a Firebase
     }
   }

@@ -13,11 +13,11 @@ const int led = D8;
 const String fbPath = "sensors/0/parkingLot/0/status";
 
 //Defines network
-char ssid[] = "FABIO GATTI";
-char password[] = "autentico";
+//char ssid[] = "FABIO GATTI";
+//char password[] = "autentico";
 
-/*const char ssid[] = "AndroidAP";
-const char password[] = "mfoq0723";*/
+const char ssid[] = "AndroidAP";
+const char password[] = "mfoq0723";
 
 /*char ssid[] = "Apto501";
 char password[] = "rNbT9kRbgeSsQ";*/
