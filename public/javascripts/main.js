@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-	var date = new Date(2018, 4, 18);
+	var date = new Date(2018, 5, 18);
 	var now = new Date();
 	var diff = (date.getTime()/1000) - (now.getTime()/1000);
 
