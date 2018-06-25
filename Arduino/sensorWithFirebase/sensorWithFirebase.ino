@@ -4,10 +4,13 @@
 #define firebaseURL "parqueameapp-6bdc3.firebaseio.com"
 #define authCode "dVB45j8eX6jJyqvOjvi2eYBEby8x3e0qo1HfIhD0"
 
-// defines pins numbers
-const int trigPin = D5;
+//Defines pins numbers
+const int trigPin = D5; //Prototipo
 const int echoPin = D6;
 const int led = D8;
+/*const int trigPin = D6; //Componente soldado
+const int echoPin = D5;
+const int led = D4;*/
 
 //Defines path to firebase
 const String fbPath = "sensors/0/parkingLot/0/status";
