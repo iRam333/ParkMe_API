@@ -20,6 +20,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 
+// Route to external sources
+app.use('/jquery', express.static(__dirname + '/node_modules/jquery/dist/'));
+app.use('/materialize', express.static(__dirname + '/node_modules/materialize-css/dist/'));
+app.use('/fontawesome', express.static(__dirname + '/node_modules/@fortawesome/fontawesome-free/'));
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

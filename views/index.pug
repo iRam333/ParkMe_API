@@ -2,8 +2,8 @@ doctype html
 html
   head
     title ParqueaMe - La mejor forma de parquear
-    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css')
-    link(rel='stylesheet', href='https://fonts.googleapis.com/icon?family=Material+Icons')
+    link(rel='stylesheet', href='/materialize/css/materialize.min.css')
+    link(rel='stylesheet', href='/fontawesome/css/all.css')
     link(rel='stylesheet', href='/stylesheets/loader.css')
     link(rel='stylesheet', href='/stylesheets/flipclock.css')
     link(rel='stylesheet', href='/stylesheets/style.css')
@@ -22,7 +22,7 @@ html
           a.brand-logo.hide-on-med-and-down(href='#main')
             img(src='/images/logo.png', alt='ParqueaMe')
           a.sidenav-trigger(href='#', data-target='slide-out')
-            i.material-icons menu
+            i.fas.fa-bars
           ul.right.hide-on-med-and-down
             li
               a(href='#what') ¿Qué es ParqueaMe?
@@ -39,20 +39,20 @@ html
           img(src='images/mobile-logo.png')
       .divider
       li
-        a(href='#what')
-          i.material-icons place
+        a.sidenav-close(href='#what')
+          i.fas.fa-map-marker-alt
           | ¿Qué es ParqueaMe?
       li
-        a(href='#foryou')
-          i.material-icons child_care
+        a.sidenav-close(href='#foryou')
+          i.fas.fa-grin-wink
           | Para ti
       li
-        a(href='#aboutus')
-          i.material-icons person_pin_circle
+        a.sidenav-close(href='#aboutus')
+          i.fas.fa-user-tie
           | Acerca de nosotros
       li
-        a(href='#soon')
-          i.material-icons access_time
+        a.sidenav-close(href='#soon')
+          i.fas.fa-calendar-alt
           | Espéralo
 
     #main.parallax-container
@@ -82,7 +82,7 @@ html
               | Pensado y desarrollado para todo tipo de usuarios, de tal forma que sea intuitivo y rápido, enfocado a un sólo objetivo sin dar tantas vueltas. De igual manera, ParqueaMe se integra con nuestro detector de espacios, un hardware desarrollado integramente para esta funcionalidad.
           .col.s12.m12.l6
             p.center-align.teal-text.text-lighten-2.slogan-section
-              i.material-icons format_quote
+              i.fas.fa-quote-right
               br
               | Encuentra un parqueadero fácil y rápido de forma inteligente
 
@@ -101,19 +101,19 @@ html
             img.mockups(src="images/mockups/side1.png")
           .col.s12.m12.l6
             .tips
-              i.material-icons.left.teal-text.text-lighten-2 airline_seat_recline_extra
+              i.fas.fa-smile-beam.left.teal-text.text-lighten-2
               .benefit
                 h5.title.teal-text.text-lighten-2 Evita los nervios
                 p.blue-grey-text.text-lighten-2.description
                   | Los usuarios evitarán situaciones estresantes.
             .tips
-              i.material-icons.left.teal-text.text-lighten-2 access_alarm
+              i.fas.fa-clock.left.teal-text.text-lighten-2
               .benefit
                 h5.title.teal-text.text-lighten-2 Maneja tu tiempo
                 p.blue-grey-text.text-lighten-2.description
                   | Controlar en tiempo real los espacios de estacionamiento disponibles.
             .tips
-              i.material-icons.left.teal-text.text-lighten-2 favorite_border
+              i.fas.fa-leaf.left.teal-text.text-lighten-2
               .benefit
                 h5.title.teal-text.text-lighten-2 Mejora la calidad de vida
                 p.blue-grey-text.text-lighten-2.description
@@ -189,16 +189,6 @@ html
             p.grey-text.text-lighten-4 Encuentra un parqueadero fácil y rápido de forma inteligente
           .col.l4.offset-l2.s12
             h5.white-text Mantente conectado
-            //-a.social-icon(href='#!')
-              img(src='/images/social-icons/if_facebook.png', alt='facebook')
-            //-a.social-icon(href='#!')
-              img(src='/images/social-icons/if_twitter.png', alt='twitter')
-            //-a.social-icon(href='#!')
-              img(src='/images/social-icons/if_instagram.png', alt='instagram')
-            //-a.social-icon(href='#!')
-              img(src='/images/social-icons/if_youtube.png', alt='youtube')
-            //-a.social-icon(href='#!')
-              img(src='/images/social-icons/if_linkedin.png', alt='linkedin')
             a.social-icon(href='https://github.com/ifram333/ParqueaMe-App' target='_blank')
               img(src='/images/social-icons/if_github.png', alt='github')
       .footer-copyright
@@ -207,7 +197,7 @@ html
           b ParqueaMe
           | , Todos los derechos reservados.
 
-    script(type='text/javascript', src='https://code.jquery.com/jquery-3.2.1.min.js')
-    script(type='text/javascript', src='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js')
+    script(type='text/javascript', src='/jquery/jquery.min.js')
+    script(type='text/javascript', src='/materialize/js/materialize.min.js')
     script(type='text/javascript', src='/javascripts/flipclock.min.js')
     script(type='text/javascript', src='/javascripts/main.js')

@@ -109,8 +109,8 @@ nav .brand-logo img {
 	margin: 16px 0;
 }
 
-.sidenav .material-icons {
-	font-size: 3rem;
+.sidenav .fas {
+	font-size: 2rem;
 }
 
 .sidenav .mobile-logo img {
@@ -147,12 +147,12 @@ nav .brand-logo img {
 	font-size: 2em;
 }
 
-#what .slogan-section .material-icons {
+#what .slogan-section .fas {
 	font-size: 3em;
 }
 
-#foryou .tips .material-icons {
-	height: 100%;
+#foryou .tips .fas {
+	font-size: 2em;
 }
 
 #foryou .tips .benefit .description{
