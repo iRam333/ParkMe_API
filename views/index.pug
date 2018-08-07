@@ -7,14 +7,15 @@ html
     link(rel='stylesheet', href='/stylesheets/loader.css')
     link(rel='stylesheet', href='/stylesheets/flipclock.css')
     link(rel='stylesheet', href='/stylesheets/style.css')
+    meta(name='description', content='ParqueaMe App, el futuro de las aplicaciones para encontrar parqueaderos en cualquier establecimiento.')
+    meta(name='keywords', content='Aplicativo movil, ParqueaMe, Smart Park, Parking, Aplicativo Inteligente, Parquear Facil, Parquear Inteligente')
+    meta(name='author', content='Ivan Ramirez, Fabio Gatti')
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
   body
 
     .loader-background
-      .scene
-        img.car(src='/images/loader/car.svg', alt='')
-        img.poof(src='/images/loader/poof.svg', alt='')
-        img.sign(src='/images/loader/sign.svg', alt='')
+      .pin
+      .pulse
 
     .navbar-fixed
       nav.transparent
@@ -142,7 +143,7 @@ html
                   | MBA e ingeniero de sistemas experto en metodologías de innovación (Design Thinking, TRIZ) y generación de modelos de negocio. Líder de proyectos de innovación, desarrollo de software, pruebas funcionales y no funcionales de software, y diseño e implementación de productos tecnológicos
               .col.s12.center-align
                a.social-icon(href='https://www.linkedin.com/in/juanpablogarciacifuentes/' target='_blank')
-                img(src='/images/social-icons/if_linkedin.png', alt='linkedin')
+                i.fab.fa-linkedin-in.blue-grey-text
           .col.s12.m12.l4
             .row
               .col.s12.m4.l12.cont
@@ -153,10 +154,10 @@ html
                       | Fabio Alessandro Gatti
               .col.s12.offset-m1.m7.l12
                 p.center-align.blue-grey-text.text-darken-2
-                  | Scrum Master, Product Owner, Diseñador y Desarrollador del aplicativo móvil, y Desarrollador del detector de automóviles.
+                  | Ingeniero de sistemas y ciencias de la computación, desarrollador de aplicativos móviles y web con tecnologías híbridas y computación en la nube.
               .col.s12.center-align
                a.social-icon(href='https://www.linkedin.com/in/fabio-alessandro-gatti-lerma-41471b109/' target='_blank')
-                img(src='/images/social-icons/if_linkedin.png', alt='linkedin')
+                i.fab.fa-linkedin-in.blue-grey-text
           .col.s12.m12.l4
             .row
               .col.s12.m4.l12.cont
@@ -167,10 +168,10 @@ html
                       | Iván Fernando Ramírez
               .col.s12.offset-m1.m7.l12
                 p.center-align.blue-grey-text.text-darken-2
-                  | Scrum Developer, Desarrollador de base de datos, Desarrollador del servidor REST Api y la Página web principal.
+                  | Analista de calidad de software con conocimiento en pruebas funcionales, automatización e integración continua. Desarrollador de aplicativos híbridos.
               .col.s12.center-align
                 a.social-icon(href='https://www.linkedin.com/in/ifram333/' target='_blank')
-                 img(src='/images/social-icons/if_linkedin.png', alt='linkedin')
+                 i.fab.fa-linkedin-in.blue-grey-text
 
     #soon.section.white
       h3.center-align.teal-text.text-lighten-2.title-section ESPÉRALO
@@ -190,7 +191,7 @@ html
           .col.l4.offset-l2.s12
             h5.white-text Mantente conectado
             a.social-icon(href='https://github.com/ifram333/ParqueaMe-App' target='_blank')
-              img(src='/images/social-icons/if_github.png', alt='github')
+              i.fab.fa-github.white-text
       .footer-copyright
         .container
           | © 2018 Derechos de autor
