@@ -5,7 +5,6 @@ html
     link(rel='stylesheet', href='/materialize/css/materialize.min.css')
     link(rel='stylesheet', href='/fontawesome/css/all.css')
     link(rel='stylesheet', href='/stylesheets/loader.css')
-    link(rel='stylesheet', href='/stylesheets/flipclock.css')
     link(rel='stylesheet', href='/stylesheets/style.css')
     meta(name='description', content='ParqueaMe App, el futuro de las aplicaciones para encontrar parqueaderos en cualquier establecimiento.')
     meta(name='keywords', content='Aplicativo movil, ParqueaMe, Smart Park, Parking, Aplicativo Inteligente, Parquear Facil, Parquear Inteligente')
@@ -13,192 +12,103 @@ html
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
   body
 
-    .loader-background
-      .pin
-      .pulse
-
-    .navbar-fixed
+    .main-section
       nav.transparent
         .nav-wrapper
-          a.brand-logo.hide-on-med-and-down(href='#main')
-            img(src='/images/logo.png', alt='ParqueaMe')
-          a.sidenav-trigger(href='#', data-target='slide-out')
-            i.fas.fa-bars
-          ul.right.hide-on-med-and-down
-            li
-              a(href='#what') ¿Qué es ParqueaMe?
-            li
-              a(href='#foryou') Para ti
-            li
-              a(href='#aboutus') Acerca de nosotros
-            li
-              a(href='#soon') Espéralo
-
-    ul#slide-out.sidenav
-      li
-        a.mobile-logo(href='#main')
-          img(src='images/mobile-logo.png')
-      .divider
-      li
-        a.sidenav-close(href='#what')
-          i.fas.fa-map-marker-alt
-          | ¿Qué es ParqueaMe?
-      li
-        a.sidenav-close(href='#foryou')
-          i.fas.fa-grin-wink
-          | Para ti
-      li
-        a.sidenav-close(href='#aboutus')
-          i.fas.fa-user-tie
-          | Acerca de nosotros
-      li
-        a.sidenav-close(href='#soon')
-          i.fas.fa-calendar-alt
-          | Espéralo
-
-    #main.parallax-container
-      .parallax
-        .filter.blue-grey.darken-4
-        img(src='/images/traffic.jpg')
-        .caption.right-align.hide-on-med-and-down
-          h2.white-text.slogan LA MEJOR FORMA DE PARQUEAR
-        .mobile-caption.left-align.hide-on-large-only
-          h2.white-text.slogan LA MEJOR FORMA DE PARQUEAR
-
-    #what.section.white
-      //- Este título y subtítulo son visibles, únicamente, cuando se muestra en una tablet o computador
-      h3.center-align.teal-text.text-lighten-2.title-section.hide-on-small-only ¿QUÉ ES PARQUEAME?
-      p.center-align.subtitle-section.blue-grey-text.hide-on-small-only Una Maravilla
-
-      //- Este título y subtítulo son visibles, únicamente, cuando se muestra en un smartphone
-      h3.center-align.teal-text.text-lighten-2.title-section.hide-on-med-and-up ¿QUÉ ES?
-      p.center-align.subtitle-section.blue-grey-text.hide-on-med-and-up Te Presentamos
-
-      .container
-        .row
-          .col.s12.m12.l6
-            p.blue-grey-text.text-lighten-2.what-section
-              | ParqueaMe es un aplicativo que busca dar solución a uno de los problemas más molestos que podemos encontrar a la hora de salir a un centro comercial, universidad o establecimiento en general. Este problema consiste en encontrar un lugar disponible donde aparcar.
-            p.blue-grey-text.text-lighten-2.what-section.hide-on-small-only
-              | Pensado y desarrollado para todo tipo de usuarios, de tal forma que sea intuitivo y rápido, enfocado a un sólo objetivo sin dar tantas vueltas. De igual manera, ParqueaMe se integra con nuestro detector de espacios, un hardware desarrollado integramente para esta funcionalidad.
-          .col.s12.m12.l6
-            p.center-align.teal-text.text-lighten-2.slogan-section
-              i.fas.fa-quote-right
-              br
-              | Encuentra un parqueadero fácil y rápido de forma inteligente
-
-    #foryou.section.white
-      //- Este título y subtítulo son visibles, únicamente, cuando se muestra en una tablet o computador
-      h3.center-align.teal-text.text-lighten-2.title-section.hide-on-small-only  ¿QUÉ TE PODÉMOS OFRECER?
-      p.center-align.subtitle-section.blue-grey-text.hide-on-small-only  Lo Mejor Para Ti
-
-      //- Este título y subtítulo son visibles, únicamente, cuando se muestra en una tablet o computador
-      h3.center-align.teal-text.text-lighten-2.title-section.hide-on-med-and-up ¿Y PARA TI?
-      p.center-align.subtitle-section.blue-grey-text.hide-on-med-and-up Lo Mejor
-
-      .container
-        .row
-          .col.s12.m12.l6
-            img.mockups(src="images/mockups/side1.png")
-          .col.s12.m12.l6
-            .tips
-              i.fas.fa-smile-beam.left.teal-text.text-lighten-2
-              .benefit
-                h5.title.teal-text.text-lighten-2 Evita los nervios
-                p.blue-grey-text.text-lighten-2.description
-                  | Los usuarios evitarán situaciones estresantes.
-            .tips
-              i.fas.fa-clock.left.teal-text.text-lighten-2
-              .benefit
-                h5.title.teal-text.text-lighten-2 Maneja tu tiempo
-                p.blue-grey-text.text-lighten-2.description
-                  | Controlar en tiempo real los espacios de estacionamiento disponibles.
-            .tips
-              i.fas.fa-leaf.left.teal-text.text-lighten-2
-              .benefit
-                h5.title.teal-text.text-lighten-2 Mejora la calidad de vida
-                p.blue-grey-text.text-lighten-2.description
-                  | Evitar la congestión del tráfico y reducir las emisiones de carbono en la ciudad con efectos positivos en términos de calidad de vida en toda la comunidad.
-
-    #aboutus.section.white
-      //- Este título y subtítulo son visibles, únicamente, cuando se muestra en una tablet o computador
-      h3.center-align.teal-text.text-lighten-2.title-section.hide-on-small-only ACERCA DE NOSOTROS
-      //- Este título y subtítulo son visibles, únicamente, cuando se muestra en una tablet o computador
-      h3.center-align.teal-text.text-lighten-2.title-section.hide-on-med-and-up NOSOTROS
-
-      p.center-align.subtitle-section.blue-grey-text  Somos Un Equipo
-
-      .container
-        .row
-          .col.s12.m12.l4
-            .row
-              .col.s12.m4.l12.cont
-                .background
-                  img.circle.image.responsive-img(src='images/cifuentes.jpg')
-                  .middleText
-                    p.text
-                      | Juan Pablo Cifuentes
-              .col.s12.offset-m1.m7.l12
-                p.center-align.blue-grey-text.text-darken-2
-                  | MBA e ingeniero de sistemas experto en metodologías de innovación (Design Thinking, TRIZ) y generación de modelos de negocio. Líder de proyectos de innovación, desarrollo de software, pruebas funcionales y no funcionales de software, y diseño e implementación de productos tecnológicos
-              .col.s12.center-align
-               a.social-icon(href='https://www.linkedin.com/in/juanpablogarciacifuentes/' target='_blank')
-                i.fab.fa-linkedin-in.blue-grey-text
-          .col.s12.m12.l4
-            .row
-              .col.s12.m4.l12.cont
-                .background
-                  img.circle.image.responsive-img(src='images/fabio.jpg')
-                  .middleText
-                    p.text
-                      | Fabio Alessandro Gatti
-              .col.s12.offset-m1.m7.l12
-                p.center-align.blue-grey-text.text-darken-2
-                  | Ingeniero de sistemas y ciencias de la computación, desarrollador de aplicativos móviles y web con tecnologías híbridas y computación en la nube.
-              .col.s12.center-align
-               a.social-icon(href='https://www.linkedin.com/in/fabio-alessandro-gatti-lerma-41471b109/' target='_blank')
-                i.fab.fa-linkedin-in.blue-grey-text
-          .col.s12.m12.l4
-            .row
-              .col.s12.m4.l12.cont
-                .background
-                  img.circle.image.responsive-img(src='images/ivan.jpg')
-                  .middleText
-                    p.text
-                      | Iván Fernando Ramírez
-              .col.s12.offset-m1.m7.l12
-                p.center-align.blue-grey-text.text-darken-2
-                  | Analista de calidad de software con conocimiento en pruebas funcionales, automatización e integración continua. Desarrollador de aplicativos híbridos.
-              .col.s12.center-align
-                a.social-icon(href='https://www.linkedin.com/in/ifram333/' target='_blank')
-                 i.fab.fa-linkedin-in.blue-grey-text
-
-    #soon.section.white
-      h3.center-align.teal-text.text-lighten-2.title-section ESPÉRALO
-      p.center-align.subtitle-section.blue-grey-text  Sabes que lo quieres
-      .container
-        .counter
-        .row.badges
-          img.col.s12.offset-m1.m4.offset-l2.l3(src="images/badges/PlayStore.svg")
-          img.col.s12.offset-m2.m4.offset-l2.l3(src="images/badges/AppStore.svg")
-
-    footer.page-footer.blue-grey.darken-4
+          img(src='../images/main/logo.png', alt='ParqueaMe').brand-logo
+      .row.container
+        .izq.col.s12.m6.l6
+          img(src='../images/main/app-icon.png', alt='Ícono').app-icon
+          h3.white-text.slogan Encuentra un parqueadero 
+           b rápido y fácil
+        .der.col.s12.m6.l6.center-align
+          img(src='../images/main/parqueame-portrait.png', alt='Ícono').app-mockup
+          
+    .what-section
+      p.center-align.title-section ¿
+        b QUÉ 
+        | ES PARQUEAME?
+      //-.parking-animation.center-align
+        img(src='../images/car/parking-lot.png', alt='Parking Lot').parking-lot
+        img(src='../images/car/car.png', alt='Car').car
+      .row.container
+        p.center-align.what-description Es la solución definitiva para encontrar parqueaderos disponibles, integrando nuestro sistema inteligente de detección de automóviles con nuestro aplicativo móvil.
+        .col.s12.m6.l3.center-align.what-feature
+          img(src='../images/what/map-pin.png', alt='Pin').icon
+          p Encuentra un parqueadero
+        .col.s12.m6.l3.center-align.what-feature
+          img(src='../images/what/car.png', alt='Car').icon
+          p Llega a tiempo a tus compromisos
+        .col.s12.m6.l3.center-align.what-feature
+          img(src='../images/what/smiley-face.png', alt='Face').icon
+          p No pierdas tiempo buscando dónde estacionar
+        .col.s12.m6.l3.center-align.what-feature
+          img(src='../images/what/leaf.png', alt='Leaf').icon
+          p Disminuye la polución
+          
+    .func-section
+      .row.container.valign-wrapper
+        .col.s12.m5.l5
+          p.right-align Funciona en parqueaderos con techo
+        .col.s12.m2.l2.center-align
+          img(src='../images/func/check.png', alt='Check').icon
+        .col.s12.m5.l5
+          p.left-align Funciona en parqueaderos sin techo
+          
+    .how-section
+      p.center-align.title-section 
+        b CARACTERISTICAS 
+        | PRINCIPALES
+      .row.container.valign-wrapper
+        .col.s12.m12.l4
+          .col.s12.m6.l12.right-align.how-features
+            img(src='../images/how/sync.png', alt='Sync').icon
+            p Estado de los parqueaderos en tiempo real
+          .col.s12.m6.l12.right-align.how-features
+            img(src='../images/how/pin.png', alt='Pin').icon
+            p Detección de estados disponibles y ocupados      
+        .col.s12.m12.l4.center-align
+          img(src='../images/how/phone-mockup.png', alt='Phone').phone
+        .col.s12.m12.l4
+          .col.s12.m6.l12.left-align.how-features
+            img(src='../images/how/mic.png', alt='Mic').icon
+            p Busqueda de establecimientos por voz
+          .col.s12.m6.l12.left-align.how-features
+            img(src='../images/how/routes.png', alt='Route').icon
+            p Ruta desde la posición actual hasta un estacionamiento disponible
+      
+    .who-section
+      .row.container.center-align
+        p.center-align.title-section ¿
+          b QUIÉNES 
+          | SOMOS?
+        .col.s12.m4.l4.photo
+          img(src='../images/garcia.jpg', alt='Route').circle.responsive-img
+          p Juan Pablo Garcia Cifuentes
+        .col.s12.m4.l4.photo
+          img(src='../images/gatti.jpg', alt='Route').circle.responsive-img
+          p Fabio Alessandro Gatti Lerma
+        .col.s12.m4.l4.photo
+          img(src='../images/ramirez.jpg', alt='Route').circle.responsive-img
+          p Iván Fernando Ramírez Sanclemente
+    
+    footer.page-footer
       .container
         .row
           .col.l6.s12
             h5.white-text ParqueaMe
-            p.grey-text.text-lighten-4 Encuentra un parqueadero fácil y rápido de forma inteligente
+            p.grey-text.text-lighten-4 Encuentra un parqueadero rápido y fácil de forma inteligente
           .col.l4.offset-l2.s12
             h5.white-text Mantente conectado
             a.social-icon(href='https://github.com/ifram333/ParqueaMe-App' target='_blank')
               i.fab.fa-github.white-text
       .footer-copyright
         .container
-          | © 2018 Derechos de autor
+          | © 2018 Derechos de autor 
           b ParqueaMe
           | , Todos los derechos reservados.
 
     script(type='text/javascript', src='/jquery/jquery.min.js')
     script(type='text/javascript', src='/materialize/js/materialize.min.js')
-    script(type='text/javascript', src='/javascripts/flipclock.min.js')
+    script(type='text/javascript', src='/scrollreveal/scrollreveal.min.js')
     script(type='text/javascript', src='/javascripts/main.js')

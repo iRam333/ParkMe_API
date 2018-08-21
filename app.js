@@ -24,6 +24,7 @@ app.use('/', indexRouter);
 app.use('/jquery', express.static(__dirname + '/node_modules/jquery/dist/'));
 app.use('/materialize', express.static(__dirname + '/node_modules/materialize-css/dist/'));
 app.use('/fontawesome', express.static(__dirname + '/node_modules/@fortawesome/fontawesome-free/'));
+app.use('/scrollreveal', express.static(__dirname + '/node_modules/scrollreveal/dist'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -3,7 +3,9 @@
   "version": "2.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "sass": "node-sass app/ -wo public/stylesheets/ --output-style compressed",
+    "dev": "concurrently \"npm:sass\" \"npm:start\""
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.2.0",
@@ -14,11 +16,15 @@
     "jquery": "^3.3.1",
     "materialize-css": "^1.0.0-rc.2",
     "morgan": "~1.9.0",
-    "pug": "2.0.0-beta11"
+    "pug": "2.0.0-beta11",
+    "scrollreveal": "^4.0.0"
   },
   "description": "[![ParqueaMe](https://i.imgur.com/HIBdyCB.png)](http://parqueameapp.com/)",
   "main": "app.js",
-  "devDependencies": {},
+  "devDependencies": {
+    "concurrently": "^3.6.1",
+    "node-sass": "^4.9.3"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ifram333/ParqueaMe.git"
