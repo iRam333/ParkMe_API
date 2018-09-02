@@ -17,7 +17,6 @@ $(document).ready(function(){
 
 	ScrollReveal().reveal($('.who-section .photo'));
 
-	/**/
 	$('a[href*="#"]')
 	.not('[href="#"]')
 	.not('[href="#0"]')
